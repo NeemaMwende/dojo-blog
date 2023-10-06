@@ -1,4 +1,3 @@
-import './App.css';
 import Navbar from './Navbar';
 import Home from './Home';
 
@@ -11,15 +10,12 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="content">
-        <Home />
+        <Home /> 
        {/*  {/* <h1>{ title }</h1>
         <p>Liked { likes }</p>
         <p>{ Math.random() * 10 }</p>
         <p>{ "Hello, World"}</p>
         <p>{ [1, 2, 3, 4, 5] }</p> */}
-         
-        
-
         {/* <a href={'link'}>Google Site</a> */}
         
       </div>
