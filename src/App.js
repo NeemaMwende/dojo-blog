@@ -1,5 +1,6 @@
 import Navbar from './Navbar';
 import Home from './Home';
+import BlogList from './blog-lists';
 
 // This is the root component of the application which gets rendered to the DOM
 function App() {
