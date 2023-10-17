@@ -28,7 +28,8 @@ const Home = () => {
             })
         .then(data => 
             {
-                console.log("Data received", data);
+                /* console.log("Data received", data); */
+                setBlogs(data);
             }) 
    }, []);
 /*    Here, name is the dependancy, useEffect watches for it and 
@@ -38,7 +39,7 @@ const Home = () => {
    
     return ( 
         <div className="home">
-            <BlogList blogs={blogs} title="All Blogs!" handleDelete={ handleDelete}/>
+            { blogs && <BlogList blogs={blogs} title="All Blogs!" handleDelete={ handleDelete}/>}
             {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'Angel')} title="Angel's Blog" /> */}
             <button onClick={() => setName('Angel')}>Change name</button>
             <p>{ name }</p>
