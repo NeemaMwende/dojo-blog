@@ -18,11 +18,14 @@ const Home = () => {
     const [name, setName] = useState('Mario');
 
     /* renders the component each time it loads */
-   useEffect(() => 
+   useEffect(() => /* good for fetching data */
    {
     console.log('use effect ran');
-    console.log(blogs);
-   }, []);
+    console.log(name);
+   }, [name]);
+/*    Here, name is the dependancy, useEffect watches for it and 
+   only renders once the button is clicked not for the other functions 
+   , but still renders initialy on the 1st load*/
    
    
     return ( 
