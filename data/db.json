@@ -2,13 +2,13 @@
     "blogs":
     [
         {
-            "id":"1",
+            "id":1,
             "title":"First blog entry",
             "content":"This is the content of my first blog post",
             "author": "Angel"
         },
         {
-            "id":"2",
+            "id":2,
             "title":"Second blog entry",
             "content":"This is the content of my second blog post",
             "author": "Grace"
