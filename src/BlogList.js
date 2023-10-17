@@ -1,21 +1,20 @@
-
-
 const BlogList = (props) => {
-/*     receiving the props from the home component */
     const blogs = props.blogs;
-    console.log(props,blogs);
+    const title = props.title;
+    /* console.log(props, blogs); */
 
-
-    return (   
+    return ( 
         <div className="blog-list">
+            <h2> { title }</h2>
             {blogs.map((blog) => (
-                <div className="blog-preview" key={blog.id}> 
-                    <h2> { blog.title } </h2>
-                    <p> Written by { blog.author }</p>
-                </div>
-             ))}
-        </div>  
-    );
+            <div className="blog-preview">
+                <h2>{ blog.title }</h2>
+                <p>Written by { blog.author }</p>
+            </div>
+        ))}
+        </div>
+        
+     );
 }
  
 export default BlogList;

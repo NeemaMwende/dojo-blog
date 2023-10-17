@@ -1,20 +1,17 @@
 import { useState } from "react";
 import BlogList from "./BlogList";
 
-const Home = () => 
-{
+
+const Home = () => {
     const [blogs, setBlogs] = useState([
-        {title: 'My new Website', body: 'lorem lipsum...', author: 'mario', id: 1},
-        {title: 'Welcome party', body: 'lorem lipsum...', author: 'angel', id: 2},
-        {title: 'Web dev top tips', body: 'lorem lipsum...', author: 'candice', id: 3}
+        { id: 1, title: 'First Blog', content: 'This is the first blog.', author: 'Angel' },
+        { id: 1, title: 'Second Blog', content: 'This is the first blog.', author: 'Neema' },
+        { id: 1, title: 'Third Blog', content: 'This is the first blog.', author: 'Grace' }
     ]);
-      
-    
+
     return ( 
         <div className="home">
-            {/* props enable one to pass data from the parent component
-            to the child component: home to bloglist */}
-             <BlogList blogs={blogs} />
+            <BlogList blogs={blogs} title="All Blogs!" />
         </div>
      );
 }
