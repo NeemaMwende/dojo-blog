@@ -57,3 +57,19 @@
     color: #f1356d;
     margin-bottom: 8px;
 }
+.blog-preview button
+{
+    line-height: 1.5;
+    height: 30px;
+    width: 120px;
+    margin-top: 20px;
+}
+.blog-preview button:hover
+{
+    background-color: #f1356d;
+    transform: rotate(2deg);
+   /*  border: 2px solid #007bff;
+    text-decoration: underline; */
+    transform: scale(1.1);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
