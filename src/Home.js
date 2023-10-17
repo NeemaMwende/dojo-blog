@@ -15,17 +15,22 @@ const Home = () => {
         setBlogs(newBlogs);
     }
  
+    const [name, setName] = useState('Mario');
+
     /* renders the component each time it loads */
    useEffect(() => 
    {
     console.log('use effect ran');
-   })
+    console.log(blogs);
+   }, []);
    
    
     return ( 
         <div className="home">
             <BlogList blogs={blogs} title="All Blogs!" handleDelete={ handleDelete}/>
             {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'Angel')} title="Angel's Blog" /> */}
+            <button onClick={() => setName('Angel')}>Change name</button>
+            <p>{ name }</p>
         </div>
      );
 }
