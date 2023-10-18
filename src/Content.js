@@ -6,7 +6,7 @@ const Content = () => {
 
     useState(() => 
     {
-        fetch("https://jsonplaceholder.typicode.com/posts")
+        fetch("http://localhost:8000/blogs")
         .then((res) => 
         {
             return res.json()
@@ -22,6 +22,8 @@ const Content = () => {
         const newBlogs = blogs.filter(blog => blog.id !== id);
         setBlogs(newBlogs);
     }
+
+    const [name, setName] = useState('Mario');
 
 
     return (  
