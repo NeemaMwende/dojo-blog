@@ -2,6 +2,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 
 
+
 // This is the root component of the application which gets rendered to the DOM
 function App() {
   // const title = "Welcome to the new blog";

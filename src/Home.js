@@ -9,11 +9,11 @@ const Home = () => {
         { id: 1, title: 'Third Blog', content: 'This is the first blog.', author: 'Angel' }
     ] */ null);
 
-    const handleDelete = (id) => 
+    /* const handleDelete = (id) => 
     {
         const newBlogs = blogs.filter(blog => blog.id !== id);
         setBlogs(newBlogs);
-    }
+    } */
  
     const [name, setName] = useState('Mario');
 
