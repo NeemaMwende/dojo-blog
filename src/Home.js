@@ -9,6 +9,7 @@ const Home = () => {
         { id: 1, title: 'Second Blog', content: 'This is the first blog.', author: 'Neema' },
         { id: 1, title: 'Third Blog', content: 'This is the first blog.', author: 'Angel' }
     ] */ null);
+const [pending, setIsPending] = useState(true);
 
     /* const handleDelete = (id) => 
     {
@@ -21,17 +22,21 @@ const Home = () => {
     /* renders the component each time it loads */
    useEffect(() => /* good for fetching data */
    {
-    /* this is a get request to localhost port 8000 */
+        setTimeout(() => 
+        {
+            /* this is a get request to localhost port 8000 */
     fetch('http://localhost:8000/blogs')
-        .then(Response => 
-            {
-                return Response.json();
-            })
-        .then(data => 
-            {
-                /* console.log("Data received", data); */
-                setBlogs(data);
-            }) 
+    .then(Response => 
+        {
+            return Response.json();
+        })
+    .then(data => 
+        {
+            /* console.log("Data received", data); */
+            setBlogs(data);
+            setIsPending(false);
+        });
+        }, 1000);
    }, []);
 /*    Here, name is the dependancy, useEffect watches for it and 
    only renders once the button is clicked not for the other functions 
@@ -41,6 +46,7 @@ const Home = () => {
     return ( 
         <div className="home">
             { blogs && <BlogList blogs={blogs} title="All Blogs!" /* handleDelete={ handleDelete} *//>}
+            { isPending && <div> Loading.... </div>}
             {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'Angel')} title="Angel's Blog" /> */}
             <button onClick={() => setName('Angel')}>Change name</button>
             <p>{ name }</p>
