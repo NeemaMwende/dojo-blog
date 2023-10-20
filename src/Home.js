@@ -10,6 +10,7 @@ const Home = () => {
         { id: 1, title: 'Third Blog', content: 'This is the first blog.', author: 'Angel' }
     ] */ null);
 const [pending, setIsPending] = useState(true);
+const [error, setError] = useState(null);
 
     /* const handleDelete = (id) => 
     {
@@ -28,6 +29,11 @@ const [pending, setIsPending] = useState(true);
     fetch('http://localhost:8000/blogs')
     .then(Response => 
         {
+            if(Response.ok)
+            {
+                throw Error('could not fetch the data for the resource');
+                
+            }
             return Response.json();
         })
     .then(data => 
@@ -35,10 +41,13 @@ const [pending, setIsPending] = useState(true);
             /* console.log("Data received", data); */
             setBlogs(data);
             setIsPending(false);
+            setError(null);
         })
     .catch(err => 
         {
-            console.log(err.message);
+            /* console.log(err.message); */
+            setError(err.message);
+            setIsPending(false);
         })
         }, 1000);
    }, []);
@@ -50,12 +59,13 @@ const [pending, setIsPending] = useState(true);
     return ( 
         <div className="home">
             { blogs && <BlogList blogs={blogs} title="All Blogs!" /* handleDelete={ handleDelete} *//>}
-            { isPending && <div> Loading.... </div>}
+            { setIsPending && <div> Loading.... </div>}
+            { error && <div>{ error}</div>}
             {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'Angel')} title="Angel's Blog" /> */}
             <button onClick={() => setName('Angel')}>Change name</button>
             <p>{ name }</p>
         </div>
      );
 }
- 
+
 export default Home;
