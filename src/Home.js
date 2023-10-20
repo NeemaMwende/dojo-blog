@@ -35,7 +35,11 @@ const [pending, setIsPending] = useState(true);
             /* console.log("Data received", data); */
             setBlogs(data);
             setIsPending(false);
-        });
+        })
+    .catch(err => 
+        {
+            console.log(err.message);
+        })
         }, 1000);
    }, []);
 /*    Here, name is the dependancy, useEffect watches for it and 
