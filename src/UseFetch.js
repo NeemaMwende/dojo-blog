@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 
-const useFetch = () => 
+const useFetch = (url) => 
 {
+
 const [data, setData] = useState(null);
-const [IsPending, setIsPending] = useState(true);
+const [isPending, setIsPending] = useState(true);
 const [error, setError] = useState(null);
 
 
@@ -12,7 +13,7 @@ const [error, setError] = useState(null);
         setTimeout(() =>  
         {
             /* this is a get request to localhost port 8000 */
-    fetch('http://localhost:3000/blogs')
+    fetch('url')
     .then(Response => 
         {
             console.log(Response);
@@ -42,7 +43,7 @@ const [error, setError] = useState(null);
    only renders once the button is clicked not for the other functions 
    , but still renders initialy on the 1st load*/
 
-   return { data, IsPending, error };
+   return { data, isPending, error };
 }
 
 export default useFetch;
