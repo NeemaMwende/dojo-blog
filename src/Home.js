@@ -9,7 +9,7 @@ const Home = () => {
         { id: 1, title: 'Second Blog', content: 'This is the first blog.', author: 'Neema' },
         { id: 1, title: 'Third Blog', content: 'This is the first blog.', author: 'Angel' }
     ] */ null);
-const [pending, setIsPending] = useState(true);
+const [IsPending, setIsPending] = useState(true);
 const [error, setError] = useState(null);
 
     /* const handleDelete = (id) => 
@@ -26,9 +26,10 @@ const [error, setError] = useState(null);
         setTimeout(() => 
         {
             /* this is a get request to localhost port 8000 */
-    fetch('http://localhost:8000/blogs')
+    fetch('http://localhost:3000/blogs')
     .then(Response => 
         {
+            console.log(Response);
             if(Response.ok)
             {
                 throw Error('could not fetch the data for the resource');
@@ -59,7 +60,7 @@ const [error, setError] = useState(null);
     return ( 
         <div className="home">
             { blogs && <BlogList blogs={blogs} title="All Blogs!" /* handleDelete={ handleDelete} *//>}
-            { setIsPending && <div> Loading.... </div>}
+            { IsPending && <div> Loading.... </div>}
             { error && <div>{ error}</div>}
             {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'Angel')} title="Angel's Blog" /> */}
             <button onClick={() => setName('Angel')}>Change name</button>
