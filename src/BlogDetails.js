@@ -6,7 +6,7 @@ const BlogDetails = () =>
 
     return ( 
         <div className="blog-details">
-            <h2>Blog Details</h2>
+            <h2>Blog Details - { id }</h2>
         </div>
      );
 }
