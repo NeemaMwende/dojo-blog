@@ -1,6 +1,6 @@
 import Navbar from './Navbar';
 import Home from './Home';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App()
 {
@@ -14,11 +14,14 @@ function App()
                             <Route path="/"> 
                                 <Home />
                             </Route>    
-                        <Switch/>
+                            <Route path="/create"> 
+                                <Home />
+                            </Route> 
+                        </Switch>
                     </div>
             </div>
-        <Router/>
+        </Router>
     );
 }
 
-export default 'App';
+export default App;
