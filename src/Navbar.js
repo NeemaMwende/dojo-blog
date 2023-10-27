@@ -1,5 +1,4 @@
-import { link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 // use an sfc command
 const Navbar = () => {
     return ( 

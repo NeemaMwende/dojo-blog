@@ -11,7 +11,7 @@ const [error, setError] = useState(null);
 
     useEffect(() => /* good for fetching data */
    {
-        const abortCont = new abortController();
+        const abortCont = new AbortController();
         
         setTimeout(() =>  
         {
@@ -49,6 +49,7 @@ const [error, setError] = useState(null);
                     }, 1000);
                     
                     return() => abortCont.abort();
+
    }, []);
 /*    Here, name is the dependancy, useEffect watches for it and 
    only renders once the button is clicked not for the other functions 
