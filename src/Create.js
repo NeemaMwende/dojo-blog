@@ -8,6 +8,8 @@ const Create = () => {
     const handleSubmit = (e) =>
     {
         e.preventDefault();
+        const blog = { title, body, author }; /* add the new blog contents to jsondb */
+        console.log(blog);
     }
 
 
