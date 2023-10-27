@@ -2,7 +2,8 @@ import { useState } from "react";
 
 const Create = () => {
     const [title, setTitle] = useState('');
-
+    const [body, setBody] = useState('');
+    const [author, setAuthor] = useState('Angel');
 
 
     return ( 
@@ -20,15 +21,21 @@ const Create = () => {
                 <label> Blog body: </label>
                     <textarea >
                         required
+                        value={body}
+                        onChange={e=>setBody(e.target.value)}
                     </textarea>
                 
                 <label> Blog author: </label>
-                <select >
+                <select 
+                    value={author}
+                    onChange={e=>setAuthor(e.target.value)} >
                     <option value="Angel"> Angel </option>
                     <option value="Grace"> Grace </option>
                 </select>
                 <button>Add Blog</button>
                 <p>{ title }</p>
+                <p>{ body }</p>
+                <p>{ author }</p>
             </form>
         </div>
      );
