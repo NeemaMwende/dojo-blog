@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useHistory } from 'react-router-dom';
 
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Angel');
     const [isPending, setIsPending] = useState(false);
+    const history = useHistory();
 
     const handleSubmit = (e) =>
     {
@@ -23,6 +25,8 @@ const Create = () => {
         {
             console.log('new blog added');
             setIsPending(false);
+           /*  history.go(-1); */ /* go back to the previous page */
+            history.push('/'); /* home page */
         })
     }
 
